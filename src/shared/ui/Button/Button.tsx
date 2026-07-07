@@ -1,41 +1,25 @@
-import {type FC, memo} from 'react';
-import {Text} from '../Text/Text.tsx';
-import {SquircleWrap} from '../SquircleWrap/SquircleWrap.tsx';
+import {Button as BaseButton} from "shared/ui-kit/button";
+import {cn} from 'shared/lib/utils.ts';
 
-interface IProps {
-  text: string;
-  onClick: () => void;
-  className?: string;
+
+type Props = React.ComponentProps<typeof BaseButton> & {
+  tone?: "primary" | "wb" | "success" | "danger"
 }
 
-export const Button: FC<IProps> = memo((props) => {
-  const {text, className, onClick} = props;
-  const onClickCustom = () => {
-    onClick();
-  }
-
+export function Button({
+  className,
+  tone = "primary",
+  ...props
+}: Props) {
   return (
-    <SquircleWrap>
-      <button
-        onClick={onClickCustom}
-        className={
-          `
-      w-full
-      py-4
-      px-5
-      rounded-2xl
-      bg-primary
-      active:scale-95 transition-transform duration-150
-      select-none
-      ${className}
-      `
-        }>
-        <Text
-          children={text}
-          weight={'semibold'}
-          color={'onPrimary'}
-        />
-      </button>
-    </SquircleWrap>
-  );
-});
+    <BaseButton
+      className={cn(
+        tone === "wb" && "bg-[#cb11ab] text-white hover:bg-[#b10f95]",
+        tone === "success" && "bg-green-600 text-white",
+        tone === "danger" && "bg-red-500 text-white",
+        className
+      )}
+      {...props}
+    />
+  )
+}

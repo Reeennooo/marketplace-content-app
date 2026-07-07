@@ -6,15 +6,9 @@
   ],
   "compilerOptions": {
     "esModuleInterop": true,
-//    "types": ["node"],
-//    "baseUrl": "src",
-//    "paths": {
-//      "app/*": ["app/*"],
-//      "shared/*": ["shared/*"],
-//      "entities/*": ["entities/*"],
-//      "features/*": ["features/*"],
-//      "pages/*": ["pages/*"],
-//      "processes/*": ["processes/*"]
-//    }
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   }
 }
