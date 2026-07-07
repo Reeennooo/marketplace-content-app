@@ -1,17 +1,12 @@
-import { NavLink } from "react-router-dom";
-import {
-  Home,
-  Package,
-  Settings,
-  LayoutDashboard,
-} from "lucide-react";
+import {NavLink} from "react-router-dom";
+import {GraduationCap, Home, LayoutDashboard, Package, Users} from "lucide-react";
 
 import {
   Sidebar,
-  SidebarHeader,
   SidebarContent,
   SidebarGroup,
   SidebarGroupLabel,
+  SidebarHeader,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
@@ -27,19 +22,27 @@ const menu = [
     title: "Карточки",
     url: "/dashboard/cards",
     icon: Package,
+  }
+];
+
+const manageMenu = [
+  {
+    title: "Пользователи",
+    url: "/dashboard",
+    icon: Users,
   },
   {
-    title: "Настройки",
-    url: "/dashboard/settings",
-    icon: Settings,
-  },
+    title: "Дети",
+    url: "/dashboard/cards",
+    icon: GraduationCap,
+  }
 ];
 
 export function AppSidebar() {
   return (
-    <Sidebar>
-      <SidebarHeader className="border-b">
-        <div className="flex items-center gap-3 px-2 py-3">
+    <Sidebar className="bg-secondary">
+      <SidebarHeader className="border-b h-14">
+        <div className="flex items-center gap-3 px-2">
           <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary text-primary-foreground">
             <LayoutDashboard className="h-5 w-5" />
           </div>
@@ -61,7 +64,23 @@ export function AppSidebar() {
             {menu.map((item) => (
               <SidebarMenuItem key={item.url}>
                 <SidebarMenuButton>
-                  <NavLink to={item.url}>
+                  <NavLink to={item.url} className={'flex gap-2 items-center'}>
+                    <item.icon />
+                    <span>{item.title}</span>
+                  </NavLink>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
+          </SidebarMenu>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Управление</SidebarGroupLabel>
+
+          <SidebarMenu>
+            {manageMenu.map((item) => (
+              <SidebarMenuItem key={item.url}>
+                <SidebarMenuButton>
+                  <NavLink to={item.url} className={'flex gap-2 items-center'}>
                     <item.icon />
                     <span>{item.title}</span>
                   </NavLink>
