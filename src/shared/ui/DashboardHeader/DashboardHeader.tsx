@@ -16,7 +16,8 @@ import {RoutePaths} from 'shared/types/routes.ts';
 const routeTitles: Record<string, string> = {
   "/dashboard": "Главная",
   [RoutePaths.userManagement]: 'Пользователи',
-  [RoutePaths.kidsManagement]: 'Дети'
+  [RoutePaths.kidsManagement]: 'Дети',
+  [RoutePaths.products]: 'Товары'
 };
 
 export function DashboardHeader() {

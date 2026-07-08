@@ -167,14 +167,13 @@ export function DashboardProducts() {
         {/* Статус */}
         <Select
           value={statusFilter}
-          onValueChange={setStatusFilter}
-          className="bg-popover"
+          onValueChange={(value) => setStatusFilter(value ?? '')}
         >
           <SelectTrigger className="w-full sm:w-[220px]">
             <SelectValue placeholder="Статус" />
           </SelectTrigger>
 
-          <SelectContent>
+          <SelectContent className="bg-popover">
             {statusOptions.map((status) => (
               <SelectItem
                 key={status.value}

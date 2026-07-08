@@ -1,7 +1,6 @@
-import {Route, Routes} from 'react-router-dom';
+import {Navigate, Route, Routes} from 'react-router-dom';
 import {ProtectedRoute} from './ProtectedRoute.tsx';
 import type {ReactElement} from 'react';
-import {Home} from 'pages/Home.tsx';
 import NotFound from 'pages/NotFound.tsx';
 import {RoutePaths} from 'shared/types/routes.ts';
 import {DashboardLayout} from 'shared/ui/DashboardLayout/DashboardLayout.tsx';
@@ -17,11 +16,7 @@ export const RoutesList = (): ReactElement => {
     <Routes>
       <Route
         path="/"
-        element={
-          <ProtectedRoute isRegistered={isRegistered}>
-            <Home />
-          </ProtectedRoute>
-        }
+        element={<Navigate to={RoutePaths.dashboard} replace />}
       />
 
       {/* DASHBOARD LAYOUT */}
