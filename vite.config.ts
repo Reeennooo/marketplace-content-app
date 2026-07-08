@@ -11,6 +11,7 @@ export default defineConfig({
     react(),
     tailwindcss(),
   ],
+  base: '/marketplace-content-app/',
   server: {
     allowedHosts: ['982646ff7257.ngrok-free.app']
   },
