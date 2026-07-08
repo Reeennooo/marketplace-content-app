@@ -11,6 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/shared/ui-kit/sidebar";
+import {RoutePaths} from 'shared/types/routes.ts';
 
 const menu = [
   {
@@ -19,8 +20,8 @@ const menu = [
     icon: Home,
   },
   {
-    title: "Карточки",
-    url: "/dashboard/cards",
+    title: "Товары",
+    url: "/dashboard/products",
     icon: Package,
   }
 ];
@@ -28,12 +29,12 @@ const menu = [
 const manageMenu = [
   {
     title: "Пользователи",
-    url: "/dashboard",
+    url: RoutePaths.userManagement,
     icon: Users,
   },
   {
     title: "Дети",
-    url: "/dashboard/cards",
+    url: RoutePaths.kidsManagement,
     icon: GraduationCap,
   }
 ];

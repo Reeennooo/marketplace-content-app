@@ -3,7 +3,6 @@ export function DashboardHome() {
     <div className="space-y-6">
       {/* Header блока страницы */}
       <div>
-        <h1 className="text-2xl font-semibold">Dashboard</h1>
         <p className="text-muted-foreground text-sm">
           Общая сводка и ключевые метрики
         </p>

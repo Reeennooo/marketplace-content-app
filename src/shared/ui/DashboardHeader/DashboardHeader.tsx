@@ -11,9 +11,12 @@ import { ChevronDown } from "lucide-react";
 import {Button} from 'shared/ui/Button/Button.tsx';
 import { PanelLeft } from "lucide-react";
 import {useSidebar} from 'shared/ui-kit/sidebar.tsx';
+import {RoutePaths} from 'shared/types/routes.ts';
 
 const routeTitles: Record<string, string> = {
-  "/dashboard": "Список карточек",
+  "/dashboard": "Главная",
+  [RoutePaths.userManagement]: 'Пользователи',
+  [RoutePaths.kidsManagement]: 'Дети'
 };
 
 export function DashboardHeader() {
@@ -59,7 +62,7 @@ export function DashboardHeader() {
           </DropdownMenuTrigger>
 
           {/* Dropdown */}
-          <DropdownMenuContent align="end" className="w-48">
+          <DropdownMenuContent align="end" className="w-48 bg-popover">
             <DropdownMenuItem>
             Профиль
             </DropdownMenuItem>
